@@ -6,6 +6,7 @@ from posts.models import Comment, Group, Post
 from api.serializers import CommentSerializer, PostSerializer, GroupSerializer
 from api.permissions import IsAuthorOrReadOnly
 
+
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -13,7 +14,7 @@ class PostViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
-        
+ 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Group.objects.all()
@@ -24,7 +25,7 @@ class CommentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         post_id = self.kwargs.get('post_id')
         return Comment.objects.filter(post=post_id)
-        
+
     serializer_class = CommentSerializer
     permission_classes = [IsAuthenticated, IsAuthorOrReadOnly]
 
