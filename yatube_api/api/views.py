@@ -23,7 +23,7 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
-        post_id = self.kwargs.get('post_id')
+        post_id = get_object_or_404(Post, pk=self.kwargs.get('post_id'))
         return Comment.objects.filter(post=post_id)
 
     serializer_class = CommentSerializer
