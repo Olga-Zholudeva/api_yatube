@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-DEBUG = str(os.getenv('DEBUG'))
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
