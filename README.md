@@ -16,6 +16,19 @@
  - api/v1/posts/{post_id}/comments/ (GET, POST): получаем список всех комментариев поста с id=post_id или создаём новый, указав id поста, который хотим прокомментировать.
  - api/v1/posts/{post_id}/comments/{comment_id}/ (GET, PUT, PATCH, DELETE): получаем, редактируем или удаляем комментарий по id у поста с id=post_id.
 
+
+### Технологии:
+- Python 3.7.9
+- Django 2.2.16
+
+- Клонируем репозиторий: **git clone [Api_Yatube](https://github.com/Olga-Zholudeva/api_yatube)**
+- Cоздаем и активировируем виртуальное окружение: **python3 -m venv env source env/bin/activate**
+- Устанавливаем зависимости из файла requirements.txt: **pip install -r requirements.txt**
+- Переходим в папку yatube_api: **cd yatube_api**
+- Создаем супер пользователя: **python manage.py createsuperuser**
+- Запускаем проект на локальном устройстве: **python3 manage.py runserver**
+- Использовать проект можно при помощи Postman
+
 <details open>
    <summary>Примеры запросов</summary>
  
@@ -59,30 +72,6 @@
   }   
 </details>
 
-### Технологии:
-- Python 3.7.9
-- Django 2.2.16
-- 
-### Запуск проекта в dev-режиме
-- Установите и активируйте виртуальное окружение
-python3 -m venv venv
-source venv/bin/activate
+### Проект выполнила:
 
-- Установите зависимости из файла requirements.txt
-
-pip3 install -r requirements.txt
-
-- Примените миграции
-
-python3 manage.py makemigrations
-python manage.py migrate
-
-- Запустите сервер:
-python3 manage.py runserver
-
-- Использовать проект можно при помощи Postman
-
-Создать пользователя в БД можно командой createsuperuser
-
-### Авторы
-Жолудева Ольга
+**Ольга Жолудева**
